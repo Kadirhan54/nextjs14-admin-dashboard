@@ -3,20 +3,20 @@ import { fetchUser } from "@/app/lib/data";
 import styles from "@/app/ui/dashboard/users/singleUser/singleUser.module.css";
 import Image from "next/image";
 
-const SingleUserPage = async ({ params }) => {
+const SingleUserPage = async ({ params }:any) => {
   
-  const { id } = params;
-  const user = await fetchUser(id);
+  // const { id } =
+  // const user =
 
   return (
     <div className={styles.container}>
-      <div className={styles.infoContainer}>
+      {/* <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
           <Image src={user.img || "/noavatar.png"} alt="" fill />
         </div>
         {user.username}
-      </div>
-      <div className={styles.formContainer}>
+      </div> */}
+      {/* <div className={styles.formContainer}>
         <form action={updateUser} className={styles.form}>
           <input type="hidden" name="id" value={user.id}/>
           <label>Username</label>
@@ -41,7 +41,7 @@ const SingleUserPage = async ({ params }) => {
           </select>
           <button>Update</button>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };

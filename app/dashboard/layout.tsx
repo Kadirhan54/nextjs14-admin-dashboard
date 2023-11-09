@@ -3,7 +3,7 @@ import Sidebar from "../ui/dashboard/sidebar/sidebar"
 import styles from "../ui/dashboard/dashboard.module.css"
 import Footer from "../ui/dashboard/footer/footer"
 
-const Layout = ({children}) => {
+const Layout = ({children}: any)  => {
   return (
     <div className={styles.container}>
       <div className={styles.menu}>

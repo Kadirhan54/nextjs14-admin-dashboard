@@ -3,13 +3,13 @@ import { fetchProduct } from "@/app/lib/data";
 import styles from "@/app/ui/dashboard/products/singleProduct/singleProduct.module.css";
 import Image from "next/image";
 
-const SingleProductPage = async ({ params }) => {
-  const { id } = params;
-  const product = await fetchProduct(id);
+const SingleProductPage = async ({ params }:any) => {
+  // const { id } =
+  // const product =
 
   return (
     <div className={styles.container}>
-      <div className={styles.infoContainer}>
+      {/* <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
           <Image src="/noavatar.png" alt="" fill />
         </div>
@@ -50,7 +50,7 @@ const SingleProductPage = async ({ params }) => {
           ></textarea>
           <button>Update</button>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };

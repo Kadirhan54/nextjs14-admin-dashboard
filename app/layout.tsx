@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Next.js 14 Tutorial',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }:any) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
