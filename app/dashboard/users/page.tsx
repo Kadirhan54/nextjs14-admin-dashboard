@@ -1,17 +1,22 @@
 
 import { fetchUsers } from "@/app/lib/data";
+import { deleteUser } from "@/app/lib/actions";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import Search from "@/app/ui/dashboard/search/search";
 import styles from "@/app/ui/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-const UsersPage = async ({ searchParams }: any) => {
-  // const q=
-  // const page=
-  // const { count, users } =
+type SearchParams = {
+  q?: string;
+  page?: number;
+};
 
-  const users = await fetchUsers();
+const UsersPage = async ({ searchParams }: { searchParams: SearchParams }) => {
+  const q = searchParams?.q || "";
+  // const page = searchParams?.page || 1;
+  const users = await fetchUsers(q);
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -57,12 +62,12 @@ const UsersPage = async ({ searchParams }: any) => {
                       View
                     </button>
                   </Link>
-                  {/* <form action={deleteUser}>
+                  <form action={deleteUser}>
                     <input type="hidden" name="id" value={(user.id)} />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
-                  </form> */}
+                  </form>
                 </div>
               </td>
             </tr>

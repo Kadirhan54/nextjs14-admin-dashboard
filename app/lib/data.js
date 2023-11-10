@@ -1,29 +1,27 @@
 import { User } from "./models";
 import { connectToDB } from "./utils";
 
-export const fetchUsers = async () => {
+export const fetchUsers = async (q) => {
+  const regex = new RegExp(q, "i");
+  const ITEM_PER_PAGE = 2;
+
   try {
+    
     connectToDB();
-    const users = await User.find({}).exec();
-    console.log(users);
+    const users = await User.find({ username: { $regex: regex } });
     return users;
+
   } catch (error) {
     console.log(error);
     throw new Error("Failed to fetch users");
   }
 };
 
-export const fetchUser = async () => {
-  
-};
+export const fetchUser = async () => {};
 
-export const fetchProducts = async () => {
-  
-};
+export const fetchProducts = async () => {};
 
-export const fetchProduct = async () => {
-  
-};
+export const fetchProduct = async () => {};
 
 // DUMMY DATA
 
